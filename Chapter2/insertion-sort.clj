@@ -5,9 +5,9 @@
            ((juxt first (fn [c] (list element)) second) 
               (partition-by #(< % element) coll)))))
 
-(defn insert-sort [coll]
+(defn insertion-sort [coll]
   (loop [to-sort (rest coll) 
-         result (list (first coll))]
+         result (take 1 coll)]
     (if (empty? to-sort) 
       result
       (recur (rest to-sort) 
